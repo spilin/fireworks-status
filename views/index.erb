@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<title>
+  Fireworks status
+</title>
+
+</head>
+<body class="bd-home">
+  <table class="table table-inverse">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Deployed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% items.each do |item| -%>
+        <tr class="bg-success">
+          <th scope="row"> <%= item['id'] %></th>
+          <td><%= item['name'] %></td>
+          <td><%= item['branch'] %></td>
+          <td><%= item['updated_at'] %></td>
+        </tr>
+      <% end -%>
+    </tbody>
+  </table>
+</body>
