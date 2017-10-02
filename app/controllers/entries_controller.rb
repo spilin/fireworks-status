@@ -8,6 +8,7 @@ class EntriesController < ApplicationController
       entry = Entry.find_or_initialize_by(name: params[:name])
       entry.branch = params[:branch]
       entry.save
+      entry.touch
       head 200
     else
       head 403
