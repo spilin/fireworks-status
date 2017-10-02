@@ -21,11 +21,15 @@
     </thead>
     <tbody>
       <% items.each do |item| -%>
-        <tr class="bg-success">
+        <tr class="bg-<%=item.state == 'progress' ? 'warning' : 'success'%>">
           <th scope="row"> <%= item.id %></th>
           <td><%= item.name %></td>
           <td><%= item.branch %></td>
+          <% if item.state == 'progress' -%>
+          <td> Deploying...(<%= distance_of_time_in_words_to_now(item.updated_at) %> ago)</td>
+          <% else -%>
           <td><%= item.updated_at %>(<%= distance_of_time_in_words_to_now(item.updated_at) %> ago)</td>
+          <% end -%>
         </tr>
       <% end -%>
     </tbody>
