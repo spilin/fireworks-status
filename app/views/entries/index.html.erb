@@ -29,7 +29,7 @@
           <% if item.state == 'progress' -%>
           <td> Deploying...(<%= distance_of_time_in_words_to_now(item.updated_at) %> ago)</td>
           <% else -%>
-          <td><%= item.updated_at %>(<%= distance_of_time_in_words_to_now(item.updated_at) %> ago)</td>
+          <td><%= distance_of_time_in_words_to_now(item.updated_at) %> ago</td>
           <% end -%>
           <td><%= item.username.presence || 'Unknown' %></td>
         </tr>
