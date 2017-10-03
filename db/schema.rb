@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002225435) do
+ActiveRecord::Schema.define(version: 20171003202940) do
 
   create_table "entries", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20171002225435) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "state"
+    t.string "username"
     t.index ["name"], name: "index_entries_on_name", unique: true
   end
 

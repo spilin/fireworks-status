@@ -16,7 +16,8 @@
         <th>#</th>
         <th>Name</th>
         <th>Branch</th>
-        <th>Deployed</th>
+        <th>Deployed at</th>
+        <th>Deployed by</th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +31,7 @@
           <% else -%>
           <td><%= item.updated_at %>(<%= distance_of_time_in_words_to_now(item.updated_at) %> ago)</td>
           <% end -%>
+          <td><%= item.username.presence || 'Unknown' %></td>
         </tr>
       <% end -%>
     </tbody>
