@@ -29,7 +29,9 @@
           <td><%= item.branch %></td>
           <td>
             <% if item.commit.present? && item.commit_url.present? -%>
-              <%= link_to [item.commit, item.subject].compact.join(' - '), item.commit_url, target: '_blank' %>
+              <%= link_to item.commit, item.commit_url, target: '_blank', class: 'badge badge-pill badge-primary' %>
+              -
+              <%= item.subject %>
             <% end %>
           </td>
           <% if item.state == 'progress' -%>
