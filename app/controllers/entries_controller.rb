@@ -9,6 +9,10 @@ class EntriesController < ApplicationController
       entry.branch = params[:branch]
       entry.state = params[:state]
       entry.username = params[:username]
+      entry.commit = params[:commit]
+      entry.commit_url = params[:commit_url]
+      entry.subject = params[:subject]
+      entry.author = params[:author]
       entry.save
       entry.touch
       head 200

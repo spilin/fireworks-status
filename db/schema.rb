@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171003202940) do
+ActiveRecord::Schema.define(version: 20171007221334) do
 
   create_table "entries", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 20171003202940) do
     t.datetime "updated_at", null: false
     t.string "state"
     t.string "username"
+    t.string "commit"
+    t.string "commit_url"
+    t.string "subject"
+    t.string "author"
     t.index ["name"], name: "index_entries_on_name", unique: true
   end
 

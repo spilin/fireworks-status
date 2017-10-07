@@ -16,6 +16,7 @@
         <th>#</th>
         <th>Name</th>
         <th>Branch</th>
+        <th>Commit</th>
         <th>Deployed at</th>
         <th>Deployed by</th>
       </tr>
@@ -26,6 +27,11 @@
           <th scope="row"> <%= item.id %></th>
           <td><%= item.name %></td>
           <td><%= item.branch %></td>
+          <td>
+            <% if item.commit.present? && item.commit_url.present? -%>
+              <%= link_to [item.commit, item.subject].compact.join(' - '), item.commit_url, target: '_blank' %>
+            <% end %>
+          </td>
           <% if item.state == 'progress' -%>
           <td> Deploying...(<%= distance_of_time_in_words_to_now(item.updated_at) %> ago)</td>
           <% else -%>
