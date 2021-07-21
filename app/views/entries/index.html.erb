@@ -13,7 +13,6 @@
   <table class="table table-inverse">
     <thead>
       <tr>
-        <th>#</th>
         <th>Name</th>
         <th>Branch</th>
         <th>Commit</th>
@@ -23,8 +22,7 @@
     </thead>
     <tbody>
       <% items.each do |item| -%>
-        <tr class="bg-<%=item.state == 'progress' ? 'warning' : 'success'%>">
-          <th scope="row"> <%= item.id %></th>
+        <tr id="env-id-<%= item.id%>" class="bg-<%=item.state == 'progress' ? 'warning' : 'success'%>">
           <td><%= item.name %></td>
           <td><%= item.branch %></td>
           <td>
