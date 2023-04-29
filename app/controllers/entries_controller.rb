@@ -1,6 +1,9 @@
 class EntriesController < ApplicationController
   def index
-    render :index, locals: { items: Entry.order(updated_at: :desc) }, layout: false
+    respond_to do |format|
+      format.html { render :index, locals: { items: Entry.order(updated_at: :desc) }, layout: false }
+      format.json { render json: { items: Entry.order(updated_at: :desc) } }
+    end
   end
 
   def create
